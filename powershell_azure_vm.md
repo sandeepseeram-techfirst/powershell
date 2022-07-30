@@ -1,0 +1,5 @@
+To create a virtual machine with Azure PowerShell, you need to have an Azure resource group. You can create a resource group with the New-AzResourceGroup command. Then, use the New-AzVm command to create the virtual machine. This command requires that you specify the resource group name, the name of the virtual machine, the location (EastUS in this case), the virtual network name, the subnet name, the security group name, the public IP address name, and credentials. The following example creates a VM named myVM1 in the myVirtualNetwork1 virtual network in the EastUS region: 
+
+
+New-AzResourceGroup -ResourceGroupName “myResourceGroupVM” -Location “EastUS” 
+New-AzVm -ResourceGroupName “myResourceGroupVM” -Name “myVM1” -Location “EastUS” -VirtualNetworkName “myVirtualNetwork1” -SubnetName “mySubnet” -SecurityGroupName “myNetworkSecurityGroup” -PublicIpAddressName “myPublicIpAddress” -Credential $cred.
